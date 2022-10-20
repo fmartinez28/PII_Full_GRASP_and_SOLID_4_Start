@@ -13,10 +13,10 @@ namespace Full_GRASP_And_SOLID
     {
         private IList<Step> steps = new List<Step>();
 
-        public Product FinalProduct { get; set; }   //FIXME: Agrega producto y guarda la instancia
+        public Product FinalProduct { get; set; }
 
-        public void AddStep(Product input, double quantity, Equipment equipment, int time)      //FIXME: Agrega objetos de Step, y contiene/guarda instancias
-        {
+        public Step AddStep(Product input, double quantity, Equipment equipment, int time)
+        { // retorna Step para que se pueda usar el Step creado en el hipotetico caso que se necesite 
             //Antes pedía como params "Step step", le pasé los parámetros del constructor de Step
             Step step = new(input, quantity, equipment, time);
             this.steps.Add(step);           //en steps
