@@ -20,6 +20,7 @@ namespace Full_GRASP_And_SOLID
             //Antes pedía como params "Step step", le pasé los parámetros del constructor de Step
             Step step = new(input, quantity, equipment, time);
             this.steps.Add(step);           //en steps
+            return step;
         }
 
         public void RemoveStep(Step step)
