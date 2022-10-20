@@ -22,8 +22,11 @@ namespace Full_GRASP_And_SOLID
 
             Recipe recipe = new Recipe();
             recipe.FinalProduct = GetProduct("Café con leche");
-            recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
-            recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
+            recipe.AddStep(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120);   //FIXME: Mejor?
+            recipe.AddStep(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60);   //FIXME: Mejor?
+            // recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));   //FIXME: ?
+            // recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));   //FIXME: ?
+            //FIXME: En las 2 instrucciones comentadas arriba, se crea una instancia de Step al añadir a la receta
 
             IPrinter printer;
             printer = new ConsolePrinter();
@@ -31,6 +34,13 @@ namespace Full_GRASP_And_SOLID
             printer = new FilePrinter();
             printer.PrintRecipe(recipe);
         }
+
+        /*
+        De acá para abajo me parece que está todo
+        relativamente aceptable, sin cambios necesarios, CREO,
+        tengo algunas dudas con los AddXXXXToCatalog, pero a la misma vez
+        creeeeo que están bien
+        */
 
         private static void PopulateCatalogs()
         {
